@@ -1,0 +1,6 @@
+{
+    RootNode = "~/SourceCode/NSMine/English.lproj/Help"; 
+    Toolbar = Yes; 
+    ViewName = Browser; 
+    WindowFrame = "{{386, 293}, {597, 440}}"; 
+}

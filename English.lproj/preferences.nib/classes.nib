@@ -1,0 +1,47 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                gamelevelOk = id; 
+                getHiscores = id; 
+                getInfo = id; 
+                newGame = id; 
+                preferencesOk = id; 
+                setLevel = id; 
+                setPreferences = id; 
+            }; 
+            CLASS = Controller; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                begTF = id; 
+                counterField = id; 
+                expTF = id; 
+                gamelevelPanel = id; 
+                hiscorePanel = id; 
+                infoPanel = id; 
+                intTF = id; 
+                messageField = id; 
+                minefieldView = id; 
+                preferencesController = id; 
+                secondsField = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {accept = id; cancel = id; revert = id; }; 
+            CLASS = PreferencesController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                backgroundWell = id; 
+                jointsWell = id; 
+                panel = id; 
+                sizeButtons = id; 
+                soundButtons = id; 
+                tilesWell = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

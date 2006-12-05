@@ -1,0 +1,50 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                appDidBecomeActive = id; 
+                appDidInit = id; 
+                appDidResignActive = id; 
+                appWillInit = id; 
+                appWillTerminate = id; 
+                getGameLevel = id; 
+                getHiscores = id; 
+                getInfoPanel = id; 
+                getPreferences = id; 
+                readPreferences = id; 
+                updateBestTimes = id; 
+                verifySettings = id; 
+                writePreferences = id; 
+            }; 
+            CLASS = Controller; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                begTF = id; 
+                expTF = id; 
+                gameBrain = id; 
+                gamelevelController = id; 
+                hiscorePanel = id; 
+                infoPanel = id; 
+                intTF = id; 
+                preferencesController = id; 
+                stringtable = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {start = id; }; 
+            CLASS = GameBrain; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {button = id; remaining = id; seconds = id; view = id; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = MinefieldView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {fieldFrame = id; theCursor = id; }; 
+            SUPERCLASS = NSView; 
+        }
+    ); 
+    IBVersion = 1; 
+}

@@ -1,0 +1,51 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                appDidInit = id; 
+                callInfoPanel = id; 
+                callInstructionPanel = id; 
+                callLicensePanel = id; 
+                giveUpButtonPressed = id; 
+                newGameButtonPressed = id; 
+                pauseButtonPressed = id; 
+                preferencesChanged = id; 
+                readPreferences = id; 
+                showAllMines = id; 
+                startButtonPressed = id; 
+                updateBestTimes = id; 
+                verifySettings = id; 
+                writePreferences = id; 
+            }; 
+            CLASS = SweepController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                begTF = id; 
+                commentLine = id; 
+                customNum = id; 
+                customX = id; 
+                customY = id; 
+                expTF = id; 
+                hintButton = id; 
+                hintCell = id; 
+                infoPanel = id; 
+                instructionPanel = id; 
+                intTF = id; 
+                levelButtons = id; 
+                licensePanel = id; 
+                mainWindow = id; 
+                minesToGo = id; 
+                pauseButton = id; 
+                pauseCell = id; 
+                preferencesBox = id; 
+                secondsElapsed = id; 
+                surrenderButton = id; 
+                surrenderCell = id; 
+                tileView = id; 
+            }; 
+            SUPERCLASS = Object; 
+        }
+    ); 
+    IBVersion = 1; 
+}

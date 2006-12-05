@@ -1,0 +1,31 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                getHiscores = id; 
+                getInfo = id; 
+                newGame = id; 
+                readPreferences = id; 
+                setLevel = id; 
+                setPreferences = id; 
+                updateBestTimes = id; 
+                writePreferences = id; 
+            }; 
+            CLASS = Controller; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                begTF = id; 
+                expTF = id; 
+                gameBrain = id; 
+                gamelevelPanel = id; 
+                hiscorePanel = id; 
+                infoPanel = id; 
+                intTF = id; 
+                preferencesController = id; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }
+    ); 
+    IBVersion = 1; 
+}
