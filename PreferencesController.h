@@ -1,5 +1,3 @@
-#import <AppKit/AppKit.h>
-/* #import <IOKit/hidsystem/event_status_driver.h> */
 #import "typedefs.h"
 #import "Controller.h"
 #import "MinefieldView.h"

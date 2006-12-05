@@ -1,4 +1,3 @@
-#import <AppKit/AppKit.h>
 #import "typedefs.h"
 #import "Controller.h"
 #import "GameBrain.h"

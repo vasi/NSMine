@@ -68,6 +68,7 @@
 		596E663309CF3AEC0005F602 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033555C7008D437F0A0001C9 /* Foundation.framework */; };
 		596E663409CF3AEC0005F602 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033555C8008D437F0A0001C9 /* AppKit.framework */; };
 		596E663509CF3AEC0005F602 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03355612008D4CC20A0001C9 /* ApplicationServices.framework */; };
+		599C20C30B2558B100C402FD /* Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 599C20C20B2558B100C402FD /* Prefix.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,7 +134,8 @@
 		0675B1FC008DFAEA0A0001C9 /* unflag.snd */ = {isa = PBXFileReference; lastKnownFileType = file; path = unflag.snd; sourceTree = "<group>"; };
 		0675B203008E00EC0A0001C9 /* uncover.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = uncover.aiff; sourceTree = "<group>"; };
 		596E663B09CF3AEC0005F602 /* Info-NSMine__Application___Upgraded_.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Info-NSMine__Application___Upgraded_.plist"; sourceTree = "<group>"; };
-		596E663C09CF3AEC0005F602 /* NSMine.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = NSMine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		596E663C09CF3AEC0005F602 /* NSMine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSMine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		599C20C20B2558B100C402FD /* Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				0335557F008D437F0A0001C9 /* constants.h */,
+				599C20C20B2558B100C402FD /* Prefix.h */,
 				03355580008D437F0A0001C9 /* Controller.h */,
 				03355581008D437F0A0001C9 /* GameBrain.h */,
 				03355582008D437F0A0001C9 /* GameLevelController.h */,
@@ -299,6 +302,7 @@
 				596E65FB09CF3AEC0005F602 /* normal_C_Functions.h in Headers */,
 				596E65FC09CF3AEC0005F602 /* PreferencesController.h in Headers */,
 				596E65FD09CF3AEC0005F602 /* typedefs.h in Headers */,
+				599C20C30B2558B100C402FD /* Prefix.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,33 +525,16 @@
 			};
 			name = Deployment;
 		};
-		596E663A09CF3AEC0005F602 /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Info-NSMine__Application___Upgraded_.plist";
-				INSTALL_PATH = /Applications;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = NSMine;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = app;
-			};
-			name = Default;
-		};
 		59948E020955FA7700FCBBC7 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = ppc;
-				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.h;
 				GCC_VERSION_ppc = 3.3;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.2;
+				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.2.8.sdk;
 			};
@@ -556,28 +543,20 @@
 		59948E030955FA7700FCBBC7 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = ppc;
-				GCC_DYNAMIC_NO_PIC = NO;
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Prefix.h;
 				GCC_VERSION_ppc = 3.3;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.2;
+				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.2.8.sdk;
 			};
 			name = Deployment;
-		};
-		59948E040955FA7700FCBBC7 /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = ppc;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_VERSION_ppc = 3.3;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.2;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_ppc = /Developer/SDKs/MacOSX10.2.8.sdk;
-			};
-			name = Default;
 		};
 /* End XCBuildConfiguration section */
 
@@ -587,20 +566,18 @@
 			buildConfigurations = (
 				596E663809CF3AEC0005F602 /* Development */,
 				596E663909CF3AEC0005F602 /* Deployment */,
-				596E663A09CF3AEC0005F602 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Development;
 		};
 		59948E010955FA7700FCBBC7 /* Build configuration list for PBXProject "NSMine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				59948E020955FA7700FCBBC7 /* Development */,
 				59948E030955FA7700FCBBC7 /* Deployment */,
-				59948E040955FA7700FCBBC7 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Development;
 		};
 /* End XCConfigurationList section */
 	};

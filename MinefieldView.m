@@ -1,5 +1,4 @@
 #import "MinefieldView.h"
-#import <AppKit/NSCursor.h>
 
 #define SMALLTILE 18
 #define LARGETILE 22

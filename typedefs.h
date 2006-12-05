@@ -1,4 +1,3 @@
-#import <AppKit/AppKit.h>
 #import "constants.h"
 
 typedef int MineField[FIELD_MAXSIZE_X][FIELD_MAXSIZE_Y];

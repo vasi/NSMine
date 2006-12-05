@@ -1,7 +1,3 @@
-#include <string.h>
-#include <time.h>
-#include <unistd.h>
-#import <AppKit/AppKit.h>
 #import "constants.h"
 
 char *intToASCII(int i, char *buf);

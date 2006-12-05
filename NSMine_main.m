@@ -2,8 +2,6 @@
    NOTE: Do NOT change this file -- Project Builder maintains it.
 */
 
-#import <AppKit/AppKit.h>
-
 int main(int argc, char *argv[]) {
 
     [NSApplication sharedApplication];
