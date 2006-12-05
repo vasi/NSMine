@@ -26,10 +26,10 @@
         }, 
         {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
         {
-            ACTIONS = {customSelected = id; update = id; }; 
+            ACTIONS = {play = id; remove = id; save = id; saveAs = id; }; 
             CLASS = GameLevelController; 
             LANGUAGE = ObjC; 
-            OUTLETS = {buttons = id; height = id; mines = id; panel = id; width = id; }; 
+            OUTLETS = {density = id; height = id; list = id; mines = id; panel = id; width = id; }; 
             SUPERCLASS = NSObject; 
         }
     ); 

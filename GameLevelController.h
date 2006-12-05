@@ -4,16 +4,18 @@
 
 @interface GameLevelController:NSObject
 {
-    id		buttons;
-    id		height;
-    id		mines;
-    id		panel;
-    id		width;
+    IBOutlet id height, width, mines, density;
+    IBOutlet id list;
+    IBOutlet id panel;
+    
+    NSArray *presets;
     GameStatus *gameStatus;
 }
 
 - activatePanel:(GameStatus*)gs;
-- customSelected:sender;
-- update:sender;
+- (IBAction) play: (id)sender;
+- (IBAction) save: (id)sender;
+- (IBAction) saveAs: (id)sender;
+- (IBAction) remove: (id)sender;
 
 @end

@@ -12,11 +12,6 @@
 #define TILES_SMALL    0
 #define TILES_LARGE    1
 
-#define GAME_BEGINNER  0
-#define GAME_INTERMED  1
-#define GAME_EXPERT    2
-#define GAME_CUSTOM    3
-
 #define GAME_READY     0
 #define GAME_RUNNING   1
 #define GAME_FINISHED  2
