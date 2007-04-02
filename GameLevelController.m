@@ -2,60 +2,68 @@
 
 @implementation GameLevelController
 
-#define PRESET(n,w,h,m) \
-    [NSDictionary dictionaryWithObjectsAndKeys: \
-        n, @"name", \
-        [NSNumber numberWithInt: w], @"width", \
-        [NSNumber numberWithInt: h], @"height", \
-        [NSNumber numberWithInt: m], @"mines", \
-        [NSNumber numberWithFloat: (float)(w*h)/m], @"density", nil]
-
-+ (NSArray*) standardPresets {
-    return [NSArray arrayWithObjects:
-        PRESET(@"Beginner", 8, 8, 10),
-        PRESET(@"Intermediate", 16, 16, 40),
-        PRESET(@"Expert", 30, 16, 99),
-        nil];
-}
-
-- (id) activatePanel:(GameStatus*)gs {
-    gameStatus = gs;
-    if (![panel isVisible]) {
-        presets = [[[self class] standardPresets] retain];
+- activatePanel:(GameStatus*)gs
+{
+  gameStatus = gs;
+  if (![panel isVisible])
+  {
+    [buttons selectCellWithTag:gameStatus->level];
+    if (gameStatus->level == GAME_CUSTOM)
+    {
+      [width setIntValue:gameStatus->width];
+      [height setIntValue:gameStatus->height];
+      [mines setIntValue:gameStatus->initialNumber];
     }
-    [panel makeKeyAndOrderFront:self];
-    return self;
+  }
+  [panel makeKeyAndOrderFront:self];
+  return self;
 }
 
-- (IBAction) play: (id)sender {
-    id preset = [presets objectAtIndex: [list selectedRow]];
-    gameStatus->width = [[preset objectForKey: @"width"] intValue];
-    gameStatus->height = [[preset objectForKey: @"height"] intValue];
-    gameStatus->initialNumber = [[preset objectForKey: @"mines"] intValue];
-    
-    [panel orderOut:self];
-    [[NSApp delegate] writePreferences:self];
-    [gameStatus->gameBrain prepareGame];
+- customSelected:sender
+{
+  [buttons selectCellWithTag:GAME_CUSTOM];
+  return self;
 }
 
-- (int) numberOfRowsInTableView: (NSTableView *)view {
-    return [presets count];
-}
+- update:sender
+{
+  gameStatus->level = [[buttons selectedCell] tag];
+  switch (gameStatus->level)
+  {
+    case 0:
+        gameStatus->width = 8;
+        gameStatus->height = 8;
+        gameStatus->initialNumber = 10;
+        break;
+    case 1:
+        gameStatus->width = 16;
+        gameStatus->height = 16;
+        gameStatus->initialNumber = 40;
+        break;
+    case 2:
+        gameStatus->width = 30;
+        gameStatus->height = 16;
+        gameStatus->initialNumber = 99;
+        break;
+    case 3:
+        gameStatus->width = 52;
+        gameStatus->height = 16;
+        gameStatus->initialNumber = 172;
+        break;
+    case 4:
+        gameStatus->width = 52;
+        gameStatus->height = 40;
+        gameStatus->initialNumber = 429;
+        break;
+    default: gameStatus->width = [width intValue];
+             gameStatus->height = [height intValue];
+	     gameStatus->initialNumber = [mines intValue];
+  }
 
-- (id) tableView: (id)tv objectValueForTableColumn: (id)col row: (int)row {
-    return [[presets objectAtIndex: row] objectForKey: @"name"];
-}
-
-- (IBAction) save: (id)sender {
-    
-}
-
-- (IBAction) saveAs: (id)sender {
-    
-}
-
-- (IBAction) remove: (id)sender {
-    
+  [panel orderOut:self];
+  [[NSApp delegate] writePreferences:self];
+  [gameStatus->gameBrain prepareGame];
+  return self;
 }
 
 @end
