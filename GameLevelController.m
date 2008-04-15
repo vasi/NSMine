@@ -46,14 +46,14 @@
         gameStatus->initialNumber = 99;
         break;
     case 3:
-        gameStatus->width = 52;
+        gameStatus->width = 69;
         gameStatus->height = 16;
-        gameStatus->initialNumber = 172;
+        gameStatus->initialNumber = 228;
         break;
     case 4:
-        gameStatus->width = 52;
-        gameStatus->height = 40;
-        gameStatus->initialNumber = 429;
+        gameStatus->width = 69;
+        gameStatus->height = 41;
+        gameStatus->initialNumber = 583;
         break;
     default: gameStatus->width = [width intValue];
              gameStatus->height = [height intValue];
