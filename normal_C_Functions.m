@@ -21,25 +21,25 @@ int ASCIIToInt(const char *buf)
 
 char *colorToASCII(NSColor * color, char *buf)
 {
-  float   r, g, b;
+  CGFloat   r, g, b;
   [[color colorUsingColorSpaceName:NSCalibratedRGBColorSpace] getRed:&r green:&g blue:&b alpha:NULL];
-  sprintf(buf, "%f:%f:%f", r, g, b);
+  sprintf(buf, "%f:%f:%f", (double)r, (double)g, (double)b);
   return buf;
 }
 
 id colorToNSString(NSColor * color)
 {
-  float   r, g, b;
+  CGFloat   r, g, b;
   char	buf[256];
   [[color colorUsingColorSpaceName:NSCalibratedRGBColorSpace] getRed:&r green:&g blue:&b alpha:NULL];
-  sprintf(buf, "%f:%f:%f", r, g, b);
-  return [NSString stringWithCString:buf];
+  sprintf(buf, "%f:%f:%f", (double)r, (double)g, (double)b);
+  return [NSString stringWithCString:buf encoding:NSASCIIStringEncoding];
 }
 
 NSColor * ASCIIToColor(const char *buf)
 {
-  float   r, g, b;
-  sscanf(buf, "%f:%f:%f", &r, &g, &b);
+  double   r, g, b;
+  sscanf(buf, "%lf:%lf:%lf", &r, &g, &b);
   return [NSColor colorWithCalibratedRed:r green:g blue:b alpha:1.0];
 }
 

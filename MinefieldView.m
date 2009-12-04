@@ -10,7 +10,6 @@
 
 - initWithFrame:(NSRect)r;
 {
-  NSPoint pt = {0,0};
   [super initWithFrame:r];
   blackRectList = NULL;
   whiteRectList = NULL;
@@ -20,7 +19,6 @@
   tilesize[TILES_LARGE] = LARGETILE;
   jointsize[TILES_SMALL] = SMALLJOINT;
   jointsize[TILES_LARGE] = LARGEJOINT;
-  theCursor = [[NSCursor alloc] initWithImage:[NSImage imageNamed:@"theCursor"] hotSpot:pt];
   sCX = [[NSScreen mainScreen] frame].size.width / 2;
   sCY = [[NSScreen mainScreen] frame].size.height / 2;
   oW = 0; oH = 0; oS = 0;
@@ -124,7 +122,6 @@
     [fieldFrame setFrameOrigin:NSMakePoint(10, 10)];
     [self setFrameOrigin:NSMakePoint(12, 12)];
     
-    [[self window] invalidateCursorRectsForView:self];
     [[self window] display];
     [[self window] makeKeyAndOrderFront:self];
     oW = gameStatus->width;
@@ -134,13 +131,6 @@
   else
     [self display];
   return self;
-}
-
-- (void)resetCursorRects
-{
-   NSRect visible;
-   if (!NSIsEmptyRect(visible = [self visibleRect]))
-     [self addCursorRect:visible cursor:theCursor];
 }
 
 - (void)drawRect:(NSRect)rects

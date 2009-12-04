@@ -133,7 +133,7 @@
 		0675B1FA008DFAEA0A0001C9 /* newRecord.snd */ = {isa = PBXFileReference; lastKnownFileType = file; path = newRecord.snd; sourceTree = "<group>"; };
 		0675B1FC008DFAEA0A0001C9 /* unflag.snd */ = {isa = PBXFileReference; lastKnownFileType = file; path = unflag.snd; sourceTree = "<group>"; };
 		0675B203008E00EC0A0001C9 /* uncover.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = uncover.aiff; sourceTree = "<group>"; };
-		596E663B09CF3AEC0005F602 /* Info-NSMine__Application___Upgraded_.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Info-NSMine__Application___Upgraded_.plist"; sourceTree = "<group>"; };
+		596E663B09CF3AEC0005F602 /* Info-NSMine__Application___Upgraded_.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-NSMine__Application___Upgraded_.plist"; sourceTree = "<group>"; };
 		596E663C09CF3AEC0005F602 /* NSMine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSMine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		599C20C20B2558B100C402FD /* Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -530,14 +530,16 @@
 		59948E020955FA7700FCBBC7 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = ppc;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.h;
+				GCC_VERSION = "";
 				GCC_VERSION_ppc = 3.3;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.2;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.2.8.sdk;
 			};
 			name = Development;
@@ -545,18 +547,14 @@
 		59948E030955FA7700FCBBC7 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Prefix.h;
-				GCC_VERSION_ppc = 3.3;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.2;
+				GCC_VERSION = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_ppc = /Developer/SDKs/MacOSX10.2.8.sdk;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Deployment;
 		};

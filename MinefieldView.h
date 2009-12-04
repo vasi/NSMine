@@ -6,7 +6,6 @@
 @interface MinefieldView:NSView
 {
   id		tiles[12][2];
-  id	   	theCursor;
   id		fieldFrame;
   int		tilesize[2], jointsize[2], sCX, sCY, oW, oH, oS, stepsize;
   int           rectListCount;
@@ -19,7 +18,6 @@
 - initWithFrame:(NSRect)r;
 - handOver:(GameStatus*)gs :(MineField*)mf;
 - resize:(BOOL)b;
-- (void)resetCursorRects;
 - (void)mouseDown:(NSEvent *)theEvent;
 - (void)rightMouseDown:(NSEvent *)theEvent;
 - updateTile:(int)i :(int)j;
