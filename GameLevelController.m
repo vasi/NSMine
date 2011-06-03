@@ -47,31 +47,6 @@
         gameStatus->height = 16;
         gameStatus->initialNumber = 99;
         break;
-    case 3:
-        gameStatus->width = 69;
-        gameStatus->height = 16;
-        gameStatus->initialNumber = 228;
-        break;
-    case 4:
-        gameStatus->width = 30;
-        gameStatus->height = 41;
-        gameStatus->initialNumber = 254;
-        break;
-	  case 5:
-		  gameStatus->width = 69;
-		  gameStatus->height = 41;
-		  gameStatus->initialNumber = 583;
-		  break;
-	  case 6:
-		  gameStatus->width = 52;
-		  gameStatus->height = 30;
-		  gameStatus->initialNumber = 322;
-		  break;
-	  case 7:
-		  gameStatus->width = 63;
-		  gameStatus->height = 37;
-		  gameStatus->initialNumber = 481;
-		  break;
 	  default: gameStatus->width = [width intValue];
              gameStatus->height = [height intValue];
 	     gameStatus->initialNumber = [mines intValue];
