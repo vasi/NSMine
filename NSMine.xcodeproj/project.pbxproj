@@ -336,7 +336,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 59948E010955FA7700FCBBC7 /* Build configuration list for PBXProject "NSMine" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 03355576008D437F0A0001C9 /* NSMine */;
 			productRefGroup = 033555CA008D437F0A0001C9 /* Products */;
 			projectDirPath = "";

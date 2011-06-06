@@ -175,7 +175,7 @@
 {
   [self stopGame];
   [button setImage:[NSImage imageNamed:@"smileyCool"]]; 
-  if ((gameStatus->level == 3)||
+  if ((gameStatus->level >= Max)||
       ([seconds intValue] >= gameStatus->best[gameStatus->level]))
   {
   	[[view window] setTitle:[[NSBundle mainBundle] localizedStringForKey:@"congratulations" value:@"Congrats!" table:nil]];
